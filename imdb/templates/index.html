@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>NameBasics</title>
+    </head>
+    <body>
+	<a href='/querya'>Query A</a>
+	<a href='/queryb'>Query B</a>
+	<a href='/queryc'>Query C</a>
+	<a href='/queryd'>Query D</a>
+	<a href='/querye'>Query E</a>
+	<a href='/queryf'>Query F</a>
+	<a href='/queryg'>Query G</a>
+	<a href='/queryh'>Query H</a>
+	<a href='/queryi'>Query I</a>
+
+	<form method="post">
+            {% csrf_token %}
+	    {{form.as_p}}
+	    <button type="submit">Submit</button>
+	</form>
+
+        <h1>Result</h1>
+	<ul>
+            {% for row in result %}
+            <li><h3>{{ row.primaryname }}</h3>{{row.primaryprofession}}</li>
+            {% endfor %}
+        </ul>
+    </body>
+</html>
